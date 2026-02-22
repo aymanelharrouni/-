@@ -3,37 +3,66 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>دعوة زفاف — رِحاب و أنيس</title>
+<title>دعوة زفاف — رحاب و أنيس</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Marhey:wght@300;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --beige: rgb(254, 250, 224);
-  --ink:#1b1a18;
-  --muted: rgba(27,26,24,.62);
-  --card: rgba(255,255,255,.80);
-  --shadow: 0 18px 45px rgba(0,0,0,.16);
-  --shadow2: 0 46px 110px rgba(0,0,0,.24);
+  /* ✅ أخضر زيتوني (أخف) */
+  --olive:   rgb(140, 152, 110);
+  --olive-2: rgb(112, 123,  86);
+  --olive-3: rgb( 86,  96,  63);
+
+  /* ✅ وردي (فاتح جدًا) */
+  --salmon:   rgb(242, 198, 206);
+  --salmon-2: rgb(226, 176, 187);
+  --rose-deep: rgb(150, 90, 105);
+
+  /* خلفيات */
+  --bg-1: rgb(248, 245, 244);
+  --bg-2: rgb(240, 242, 232);
+
+  /* نص */
+  --ink: rgb(26, 30, 22);
+  --muted: rgba(26, 30, 22, .62);
+
+  /* أسطح */
+  --card: rgba(255, 252, 246, .94);
+  --card-2: rgba(248, 242, 244, .94);
+
+  /* ✅ مربعات وردي (فاتح) */
+  --pink-box:   rgb(252, 234, 238);
+  --pink-box-2: rgb(246, 216, 223);
+  --pink-stroke: rgba(150, 90, 105, .14);
+
+  /* ظلال */
+  --shadow: 0 18px 45px rgba(26,30,22,.14);
+  --shadow2: 0 46px 110px rgba(26,30,22,.18);
   --radius: 26px;
 
-  /* رأس الصفحة: أخضر عسكري داكن (دقيق) */
-  --military: rgb(58, 74, 38);
-  --military2: rgb(46, 60, 30);
+  /* aliases */
+  --accent: var(--olive-2);
+  --accent-2: var(--olive-3);
+
+  --pink-detail: var(--salmon);
+  --pink-detail-2: var(--salmon-2);
 }
 
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
-  font-family: "Amiri", serif;
+  font-family: "Amiri", Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(1100px 650px at 20% 10%, rgba(58,74,38,.14), transparent 55%),
-    radial-gradient(900px 520px at 85% 30%, rgba(58,74,38,.10), transparent 60%),
-    linear-gradient(180deg,#f7f2d7,var(--beige));
+    radial-gradient(1100px 650px at 20% 10%, rgba(140,152,110,.22), transparent 55%),
+    radial-gradient(900px 520px at 85% 30%, rgba(112,123, 86,.16), transparent 60%),
+    radial-gradient(980px 640px at 55% 18%, rgba(242,198,206,.16), transparent 58%),
+    radial-gradient(900px 600px at 70% 85%, rgba(226,176,187,.10), transparent 55%),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2));
   padding: 28px 12px 56px;
   overflow-x:hidden;
 }
@@ -43,19 +72,21 @@ body{
   margin:0 auto;
   border-radius: var(--radius);
   overflow:hidden;
-  background: var(--beige);
+  background: linear-gradient(180deg, rgba(255,252,246,.98), rgba(240,242,232,.76));
   box-shadow: var(--shadow2);
-  border: 1px solid rgba(0,0,0,.06);
+  border: 1px solid rgba(112,123,86,.16);
 }
 
 /* =========================
-   رأس الصفحة
+   HEADER
    ========================= */
 header{
   position:relative;
   background:
-    radial-gradient(900px 460px at 50% -10%, rgba(255,255,255,.08), transparent 60%),
-    linear-gradient(180deg, var(--military), var(--military2));
+    radial-gradient(900px 460px at 20% -10%, rgba(255,255,255,.12), transparent 60%),
+    radial-gradient(760px 460px at 78% 125%, rgba(242,198,206,.16), transparent 60%),
+    radial-gradient(520px 360px at 18% 115%, rgba(226,176,187,.10), transparent 60%),
+    linear-gradient(180deg, var(--accent), var(--accent-2));
   color:#fff;
   overflow:hidden;
 }
@@ -66,35 +97,38 @@ header{
 }
 
 .kicker{
-  font-family:"Amiri", serif;
-  letter-spacing:.22em;
-  font-size:13px;
+  font-family:"Playfair Display", "Amiri", serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  font-size:12px;
   opacity:.95;
 }
 
 .names{
   margin:14px 0 8px;
-  line-height:1.05;
+  line-height:1.02;
 }
 
 .names .a,.names .b{
-  font-family:"Marhey", cursive;
-  font-size:clamp(52px,6vw,92px);
+  font-family:"Amiri", serif;
+  font-size:clamp(50px,5.6vw,84px);
+  font-weight:700;
   color:#fff;
-  text-shadow:0 14px 34px rgba(0,0,0,.35);
+  text-shadow:0 14px 34px rgba(26,30,22,.35);
 }
 
 .amp{
-  font-family:"Amiri", serif;
-  font-size:22px;
-  margin:8px 0;
+  font-family:"Playfair Display","Amiri",serif;
+  font-style:italic;
+  font-size:18px;
+  margin:10px 0;
   opacity:.95;
 }
 
 .meta{
   margin-top:10px;
-  font-family:"Amiri", serif;
-  font-size:15px;
+  font-family:"Playfair Display","Amiri",serif;
+  font-size:14px;
   opacity:.96;
 }
 
@@ -102,32 +136,35 @@ header{
   height:1px;
   width:min(560px,86%);
   margin:18px auto 0;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);
-  opacity:.7;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),transparent);
+  opacity:.85;
 }
 
 /* =========================
-   أقسام
+   SECTIONS
    ========================= */
 section{ padding: 28px 18px; }
 
 .title{
-  font-family:"Marhey", cursive;
-  font-size:42px;
+  font-family:"Amiri", serif;
+  font-size:44px;
   margin:0;
   text-align:center;
-  color:#2a2a26;
+  color: rgba(26,30,22,.92);
+  font-weight:700;
 }
 
 .sub{
   text-align:center;
-  font-family:"Amiri", serif;
-  color: var(--muted);
+  font-family:"Playfair Display","Amiri",serif;
+  font-style:italic;
+  color: rgba(26,30,22,.62);
   margin:8px 0 18px;
-  font-size:15px;
 }
 
-/* العدّ التنازلي */
+/* =========================
+   COUNTDOWN (pink)
+   ========================= */
 .tiles{
   margin:18px auto 0;
   max-width:760px;
@@ -139,27 +176,28 @@ section{ padding: 28px 18px; }
   .tiles{grid-template-columns:repeat(2,1fr)}
 }
 .tile{
-  background: rgba(255,255,255,.88);
+  background: linear-gradient(180deg, var(--pink-box), var(--pink-box-2));
   border-radius:18px;
   padding:16px;
   text-align:center;
-  box-shadow:0 14px 34px rgba(0,0,0,.10);
-  border: 1px solid rgba(0,0,0,.06);
+  box-shadow:0 14px 34px rgba(26,30,22,.10);
+  border: 1px solid var(--pink-stroke);
 }
 .tile .num{
-  font-family:"Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-family:"Playfair Display","Amiri",serif;
   font-size:34px;
   font-weight:600;
-  direction:ltr;
+  color: rgb(70, 30, 42);
 }
 .tile .lbl{
   margin-top:6px;
-  font-size:12px;
-  letter-spacing:.12em;
-  color:rgba(0,0,0,.6);
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color: rgba(70, 30, 42, .62);
 }
 
-/* بطاقات (التفاصيل + البرنامج) */
+/* Cards */
 .grid{
   margin: 18px auto 0;
   max-width: 900px;
@@ -171,9 +209,9 @@ section{ padding: 28px 18px; }
   .grid{ grid-template-columns:1fr; }
 }
 .card{
-  background: var(--card);
+  background: linear-gradient(180deg, var(--card), var(--card-2));
   border-radius: var(--radius);
-  border: 1px solid rgba(0,0,0,.08);
+  border: 1px solid rgba(112,123,86,.16);
   box-shadow: var(--shadow);
   overflow:hidden;
 }
@@ -181,48 +219,53 @@ section{ padding: 28px 18px; }
 .card h3{
   margin:0;
   text-align:center;
-  font-family:"Amiri", serif;
-  font-weight:700;
-  font-size:20px;
+  font-family:"Playfair Display","Amiri",serif;
+  font-weight:600;
+  color: rgba(26,30,22,.92);
 }
 
 .details{
   margin-top:14px;
   display:grid;
   gap:10px;
-  font-size:15px;
-  color: rgba(27,26,24,.86);
+  font-size:14px;
+  color: rgba(26,30,22,.86);
 }
+
+/* Detail rows */
 .row{
   display:flex;
   gap:10px;
   align-items:flex-start;
   padding:10px 12px;
   border-radius:16px;
-  background: rgba(254,250,224,.92);
-  border: 1px solid rgba(0,0,0,.06);
+  background: linear-gradient(180deg, rgba(252,234,238,.96), rgba(246,216,223,.92));
+  border: 1px solid rgba(150,90,105,.14);
 }
 .ico{
   width:30px; height:30px;
   border-radius:12px;
   display:grid;
   place-items:center;
-  background: rgba(58,74,38,.12);
-  border: 1px solid rgba(58,74,38,.18);
+  background:
+    radial-gradient(16px 16px at 30% 30%, rgba(255,255,255,.60), transparent 60%),
+    linear-gradient(180deg, rgba(140,152,110,.38), rgba(242,198,206,.16));
+  border: 1px solid rgba(150,90,105,.14);
   flex:0 0 auto;
 }
 
-/* “خريطة” زخرفية */
+/* Decorative map */
 .map{
   height:200px;
   background:
-    radial-gradient(800px 250px at 70% 30%, rgba(58,74,38,.18), transparent 55%),
-    linear-gradient(180deg, rgba(58,74,38,.10), rgba(254,250,224,.98)),
-    repeating-linear-gradient(90deg, rgba(0,0,0,.06) 0 1px, transparent 1px 26px),
-    repeating-linear-gradient(0deg, rgba(0,0,0,.04) 0 1px, transparent 1px 22px);
+    radial-gradient(800px 250px at 70% 30%, rgba(140,152,110,.32), transparent 55%),
+    radial-gradient(900px 520px at 25% 70%, rgba(242,198,206,.12), transparent 55%),
+    linear-gradient(180deg, rgba(112,123,86,.12), rgba(248,245,244,.92)),
+    repeating-linear-gradient(90deg, rgba(112,123,86,.14) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(0deg, rgba(112,123,86,.10) 0 1px, transparent 1px 22px);
   position:relative;
-  border-top: 1px solid rgba(0,0,0,.07);
-  border-bottom: 1px solid rgba(0,0,0,.07);
+  border-top: 1px solid rgba(112,123,86,.18);
+  border-bottom: 1px solid rgba(112,123,86,.18);
 }
 .pin{
   position:absolute;
@@ -231,8 +274,8 @@ section{ padding: 28px 18px; }
   transform:translate(-50%,-60%);
   width:14px; height:14px;
   border-radius:999px;
-  background: var(--military);
-  box-shadow:0 10px 18px rgba(0,0,0,.22);
+  background: var(--pink-detail-2);
+  box-shadow:0 10px 18px rgba(26,30,22,.22);
 }
 .pin::after{
   content:"";
@@ -242,20 +285,20 @@ section{ padding: 28px 18px; }
   width:0; height:0;
   border-left:7px solid transparent;
   border-right:7px solid transparent;
-  border-top:10px solid var(--military);
+  border-top:10px solid var(--pink-detail-2);
 }
 .map-label{
   position:absolute;
-  right:18px; bottom:14px;
-  background: rgba(255,255,255,.82);
-  border:1px solid rgba(58,74,38,.18);
+  left:18px; bottom:14px;
+  background: rgba(255,252,246,.90);
+  border:1px solid rgba(242,198,206,.22);
   border-radius:999px;
   padding:8px 12px;
   font-size:12px;
-  box-shadow:0 12px 25px rgba(0,0,0,.10);
+  box-shadow:0 12px 25px rgba(26,30,22,.10);
+  color: rgba(26,30,22,.88);
 }
 
-/* أزرار */
 .btn{
   display:inline-flex;
   gap:10px;
@@ -263,62 +306,68 @@ section{ padding: 28px 18px; }
   justify-content:center;
   padding:12px 16px;
   border-radius:999px;
-  border:1px solid rgba(58,74,38,.30);
-  background: rgba(255,255,255,.86);
-  color: var(--ink);
+  border:1px solid rgba(242,198,206,.26);
+  background:
+    radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.65), transparent 60%),
+    linear-gradient(180deg, rgba(255,252,246,.92), rgba(248,242,244,.86));
+  color: rgba(26,30,22,.92);
   text-decoration:none;
-  font-weight:700;
-  box-shadow:0 10px 25px rgba(0,0,0,.10);
+  font-weight:500;
+  box-shadow:0 10px 25px rgba(26,30,22,.10);
   transition: transform .15s ease, background .15s ease;
 }
-.btn:hover{ background: rgba(255,255,255,.96); }
+.btn:hover{
+  background:
+    radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.75), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.95), rgba(248,242,244,.90));
+}
 .btn:active{ transform: scale(.98); }
 
-/* الجدول الزمني */
+/* Programme */
 .timeline{ display:grid; gap:10px; padding: 6px 2px 6px; }
 .item{
   display:grid;
-  grid-template-columns:1fr 84px; /* RTL: الوقت على اليسار visually */
+  grid-template-columns:84px 1fr;
   gap:12px;
   align-items:center;
   padding:12px 12px;
   border-radius:18px;
-  background: rgba(254,250,224,.92);
-  border: 1px solid rgba(0,0,0,.06);
+  background: linear-gradient(180deg, rgba(248,242,244,.90), rgba(240,242,232,.76));
+  border: 1px solid rgba(112,123,86,.14);
 }
 .time{
-  font-family:"Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  font-weight:700;
+  font-family:"Playfair Display","Amiri",serif;
+  font-weight:600;
   font-size:13px;
-  background: rgba(58,74,38,.12);
-  border: 1px solid rgba(58,74,38,.18);
+  background:
+    linear-gradient(180deg, rgba(140,152,110,.44), rgba(242,198,206,.12));
+  border: 1px solid rgba(242,198,206,.16);
   border-radius:14px;
   padding:10px 10px;
   text-align:center;
-  direction:ltr;
+  color: rgba(26,30,22,.92);
 }
 .desc .t{
   margin:0;
-  font-family:"Amiri", serif;
-  font-weight:700;
-  font-size:16px;
+  font-family:"Playfair Display","Amiri",serif;
+  font-weight:600;
+  font-size:15px;
+  color: rgba(26,30,22,.92);
 }
 .desc .s{
   margin:2px 0 0;
-  color: rgba(27,26,24,.62);
-  font-size:13px;
+  color: rgba(26,30,22,.62);
+  font-size:12px;
 }
 
 footer{
   padding:20px;
   text-align:center;
   font-size:12px;
-  color:rgba(0,0,0,.5);
+  color:rgba(26,30,22,.55);
 }
 
-/* =========================
-   البداية / الظرف
-   ========================= */
+/* INTRO */
 .intro{
   position:fixed;
   inset:0;
@@ -326,13 +375,14 @@ footer{
   place-items:center;
   z-index:9999;
   background:
-    radial-gradient(1100px 650px at 20% 10%, rgba(58,74,38,.16), transparent 55%),
-    radial-gradient(900px 520px at 85% 30%, rgba(58,74,38,.10), transparent 60%),
-    linear-gradient(180deg,#f7f2d7,var(--beige));
+    radial-gradient(1100px 650px at 20% 10%, rgba(140,152,110,.22), transparent 55%),
+    radial-gradient(900px 520px at 85% 30%, rgba(112,123,86,.16), transparent 60%),
+    radial-gradient(980px 640px at 55% 18%, rgba(242,198,206,.16), transparent 58%),
+    radial-gradient(900px 600px at 70% 85%, rgba(226,176,187,.10), transparent 55%),
+    linear-gradient(180deg, var(--bg-1), var(--bg-2));
   transition: opacity .85s ease, transform .85s cubic-bezier(.2,.9,.2,1);
   padding: 22px 12px;
 }
-
 .intro-inner{
   width:min(560px,92vw);
   text-align:center;
@@ -342,17 +392,18 @@ footer{
   0%,100%{ transform: translateY(0); }
   50%{ transform: translateY(-10px); }
 }
-
 .intro-title{
-  font-family:"Marhey", cursive;
+  font-family:"Amiri",serif;
   font-size:54px;
   margin:0 0 6px;
-  color: rgba(27,26,24,.88);
+  color: rgba(26,30,22,.88);
+  font-weight:700;
 }
 .intro-sub{
-  font-family:"Amiri", serif;
+  font-family:"Playfair Display","Amiri",serif;
+  font-style:italic;
   margin:0 0 18px;
-  color: rgba(27,26,24,.62);
+  color: rgba(26,30,22,.62);
   font-size:14px;
 }
 
@@ -366,14 +417,14 @@ footer{
   cursor:pointer;
   user-select:none;
   overflow:hidden;
-  box-shadow: 0 28px 78px rgba(0,0,0,.22);
-  border:1px solid rgba(0,0,0,.10);
+  box-shadow: 0 28px 78px rgba(26,30,22,.20);
+  border:1px solid rgba(112,123,86,.18);
   background:
-    radial-gradient(1200px 700px at 30% 10%, rgba(255,255,255,.60), transparent 52%),
-    radial-gradient(700px 520px at 70% 90%, rgba(0,0,0,.08), transparent 60%),
-    linear-gradient(180deg, rgba(255,255,255,.65), rgba(0,0,0,.05)),
-    repeating-linear-gradient(0deg, rgba(0,0,0,.020) 0 1px, transparent 1px 7px),
-    repeating-linear-gradient(90deg, rgba(0,0,0,.012) 0 1px, transparent 1px 11px);
+    radial-gradient(1200px 700px at 30% 10%, rgba(255,255,255,.52), transparent 52%),
+    radial-gradient(700px 520px at 70% 90%, rgba(26,30,22,.10), transparent 60%),
+    linear-gradient(180deg, rgba(255,252,246,.92), rgba(140,152,110,.18)),
+    repeating-linear-gradient(0deg, rgba(112,123,86,.06) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(90deg, rgba(112,123,86,.04) 0 1px, transparent 1px 11px);
 }
 .envelope::after{
   content:"";
@@ -382,7 +433,6 @@ footer{
   transform: rotate(-6deg);
   pointer-events:none;
 }
-
 .letter{
   position:absolute;
   left: 8%;
@@ -390,35 +440,35 @@ footer{
   bottom: 10%;
   height: 74%;
   border-radius: 18px;
-  border: 1px solid rgba(0,0,0,.10);
-  box-shadow: 0 18px 40px rgba(0,0,0,.14);
+  border: 1px solid rgba(112,123,86,.16);
+  box-shadow: 0 18px 40px rgba(26,30,22,.12);
   transform: translateY(42%);
   transition: transform 1.25s cubic-bezier(.18,.95,.18,1);
   background:
-    radial-gradient(820px 360px at 30% 10%, rgba(58,74,38,.10), transparent 55%),
-    linear-gradient(180deg, rgba(255,255,255,.82), rgba(254,250,224,.92)),
-    repeating-linear-gradient(0deg, rgba(0,0,0,.014) 0 1px, transparent 1px 8px);
+    radial-gradient(820px 360px at 30% 10%, rgba(140,152,110,.18), transparent 55%),
+    radial-gradient(720px 420px at 78% 85%, rgba(242,198,206,.12), transparent 60%),
+    linear-gradient(180deg, rgba(255,255,255,.86), rgba(240,242,232,.76)),
+    repeating-linear-gradient(0deg, rgba(112,123,86,.05) 0 1px, transparent 1px 8px);
 }
 .letter::after{
   content:"";
   position:absolute;
   inset: 12px;
   border-radius: 14px;
-  border: 1px solid rgba(58,74,38,.16);
+  border: 1px solid rgba(242,198,206,.14);
   pointer-events:none;
 }
-
 .flap{
   position:absolute;
   left:0; right:0; top:0;
   height:58%;
   background:
-    radial-gradient(820px 280px at 50% 0%, rgba(255,255,255,.58), transparent 58%),
-    linear-gradient(180deg, rgba(255,255,255,.52), rgba(0,0,0,.03));
+    radial-gradient(820px 280px at 50% 0%, rgba(255,255,255,.60), transparent 58%),
+    linear-gradient(180deg, rgba(255,252,246,.86), rgba(140,152,110,.16));
   clip-path: polygon(0 0, 100% 0, 50% 62%);
   transform-origin: 50% 0%;
   transition: transform 1.25s cubic-bezier(.18,.95,.18,1);
-  border-bottom:1px solid rgba(0,0,0,.08);
+  border-bottom:1px solid rgba(112,123,86,.14);
 }
 .flap2{
   position:absolute;
@@ -426,9 +476,9 @@ footer{
   height:56%;
   background:
     radial-gradient(820px 320px at 50% 100%, rgba(255,255,255,.40), transparent 60%),
-    linear-gradient(0deg, rgba(255,255,255,.44), rgba(0,0,0,.05));
+    linear-gradient(0deg, rgba(255,252,246,.84), rgba(140,152,110,.14));
   clip-path: polygon(0 100%, 100% 100%, 50% 40%);
-  border-top:1px solid rgba(0,0,0,.08);
+  border-top:1px solid rgba(112,123,86,.14);
 }
 .seal{
   position:absolute;
@@ -438,8 +488,8 @@ footer{
   width:18px;
   height:18px;
   border-radius:999px;
-  background: var(--military);
-  box-shadow:0 12px 20px rgba(0,0,0,.18);
+  background: var(--pink-detail-2);
+  box-shadow:0 12px 20px rgba(26,30,22,.18);
   border:1px solid rgba(255,255,255,.55);
   opacity:.9;
 }
@@ -458,25 +508,22 @@ body.opened .intro{
   .intro, .flap, .letter{ transition:none !important; }
 }
 
-/* =========================
-   تأكيد الحضور (زر في النهاية)
-   ========================= */
+/* RSVP */
 .rsvp-wrap{
   display:flex;
   justify-content:center;
   padding: 8px 18px 34px;
 }
 .rsvp-btn{
-  min-width: 260px;
-  font-family:"Amiri", serif;
-  letter-spacing:.02em;
+  min-width: 240px;
+  font-family:"Playfair Display","Amiri",serif;
+  letter-spacing:.04em;
 }
 </style>
 </head>
 
 <body>
 
-<!-- البداية / الظرف -->
 <div class="intro" id="intro">
   <div class="intro-inner">
     <h1 class="intro-title">دعوة</h1>
@@ -491,15 +538,14 @@ body.opened .intro{
   </div>
 </div>
 
-<!-- المحتوى -->
 <main class="page" id="content">
 
   <header>
     <div class="hero">
       <div class="kicker">دعوة زفاف</div>
       <div class="names">
-        <div class="a">رِحاب</div>
-        <div class="amp">و</div>
+        <div class="a">رحاب</div>
+        <div class="amp">&amp;</div>
         <div class="b">أنيس</div>
       </div>
       <div class="meta">04 أبريل 2026 · Palais Tazi, Rabat</div>
@@ -509,7 +555,7 @@ body.opened .intro{
 
   <section>
     <h2 class="title">العدّ التنازلي</h2>
-    <p class="sub">حتى يومنا المميز</p>
+    <p class="sub">لأجمل يوم في حياتنا</p>
 
     <div class="tiles" role="group" aria-label="العدّ التنازلي">
       <div class="tile"><div class="num" id="cd-days">—</div><div class="lbl">أيام</div></div>
@@ -521,7 +567,7 @@ body.opened .intro{
 
   <section>
     <h2 class="title">التفاصيل</h2>
-    <p class="sub">كل المعلومات الأساسية في مكان واحد</p>
+    <p class="sub">كل المعلومات المهمة في لمحة واحدة</p>
 
     <div class="grid">
       <article class="card" aria-label="المكان والمعلومات">
@@ -533,7 +579,7 @@ body.opened .intro{
               <div class="ico">📍</div>
               <div>
                 <div style="font-weight:700;">المكان</div>
-                <div style="color:rgba(27,26,24,.72)">Palais Tazi, Rabat</div>
+                <div style="color:rgba(70,30,42,.78)">Palais Tazi, Rabat</div>
               </div>
             </div>
 
@@ -541,7 +587,7 @@ body.opened .intro{
               <div class="ico">📅</div>
               <div>
                 <div style="font-weight:700;">التاريخ</div>
-                <div style="color:rgba(27,26,24,.72)">04 أبريل 2026</div>
+                <div style="color:rgba(70,30,42,.78)">04 أبريل 2026</div>
               </div>
             </div>
 
@@ -549,7 +595,7 @@ body.opened .intro{
               <div class="ico">👰</div>
               <div>
                 <div style="font-weight:700;">العروس</div>
-                <div style="color:rgba(27,26,24,.72)">Rihab Amhaouache El Kadaoui</div>
+                <div style="color:rgba(70,30,42,.78)">Rihab Amhaouache El Kadaoui</div>
               </div>
             </div>
 
@@ -557,7 +603,7 @@ body.opened .intro{
               <div class="ico">🤵</div>
               <div>
                 <div style="font-weight:700;">العريس</div>
-                <div style="color:rgba(27,26,24,.72)">Anis Tedjini</div>
+                <div style="color:rgba(70,30,42,.78)">Anis Tedjini</div>
               </div>
             </div>
           </div>
@@ -577,75 +623,68 @@ body.opened .intro{
         </div>
       </article>
 
-      <article class="card" aria-label="البرنامج">
+      <article class="card" aria-label="برنامج اليوم">
         <div class="pad">
           <h3>برنامج اليوم</h3>
 
           <div class="timeline" style="margin-top:10px;">
             <div class="item">
+              <div class="time">16:00</div>
               <div class="desc">
                 <p class="t">المراسم</p>
-                <p class="s">وصول الضيوف</p>
+                <p class="s">استقبال الضيوف</p>
               </div>
-              <div class="time">16:00</div>
             </div>
-
             <div class="item">
+              <div class="time">18:00</div>
               <div class="desc">
                 <p class="t">كوكتيل ترحيبي</p>
-                <p class="s">تحية و مقبلات</p>
+                <p class="s">نخب ومقبلات</p>
               </div>
-              <div class="time">18:00</div>
             </div>
-
             <div class="item">
+              <div class="time">20:00</div>
               <div class="desc">
                 <p class="t">العشاء</p>
-                <p class="s">الوليمة</p>
+                <p class="s">مأدبة</p>
               </div>
-              <div class="time">20:00</div>
             </div>
-
             <div class="item">
+              <div class="time">22:30</div>
               <div class="desc">
                 <p class="t">الرقص</p>
                 <p class="s">موسيقى واحتفال</p>
               </div>
-              <div class="time">22:30</div>
             </div>
-
             <div class="item">
-              <div class="desc">
-                <p class="t">نهاية الحفل</p>
-                <p class="s">شكراً لحضوركم</p>
-              </div>
               <div class="time">01:30</div>
+              <div class="desc">
+                <p class="t">نهاية السهرة</p>
+                <p class="s">شكرًا لحضوركم</p>
+              </div>
             </div>
           </div>
 
-          <p style="margin: 12px 0 0; text-align:center; color: rgba(27,26,24,.55); font-size: 12px;">
-            (نتمنى لكم أمسيةً سعيدة)
+          <p style="margin: 12px 0 0; text-align:center; color: rgba(26,30,22,.55); font-size: 12px;">
+            (يمكنك تعديل التوقيت عبر تعديل هذا الملف)
           </p>
         </div>
       </article>
     </div>
   </section>
 
-  <!-- زر تأكيد الحضور -->
   <div class="rsvp-wrap">
-    <!-- ⚠️ غيّر الرقم إلى الرقم الحقيقي -->
     <a class="btn rsvp-btn"
-       href="https://wa.me/33667589369?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%A4%D9%83%D8%AF%20%D8%AD%D8%B6%D9%88%D8%B1%D9%8A%20%D9%84%D8%AD%D9%81%D9%84%20%D8%B2%D9%81%D8%A7%D9%81%20%D8%B1%D9%90%D8%AD%D8%A7%D8%A8%20%D9%88%D8%A3%D9%86%D9%8A%D8%B3%20%D9%8A%D9%88%D9%85%2004%20%D8%A3%D8%A8%D8%B1%D9%8A%D9%84%202026.%20%D8%A7%D8%B3%D9%85%D9%8A%20%D9%87%D9%88%3A%20"
+       href="https://wa.me/34600000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D8%A3%D8%A4%D9%83%D8%AF%20%D8%AD%D8%B6%D9%88%D8%B1%D9%8A%20%D9%84%D8%B2%D9%81%D8%A7%D9%81%20%D8%B1%D8%AD%D8%A7%D8%A8%20%D9%88%D8%A3%D9%86%D9%8A%D8%B3%20%D9%8A%D9%88%D9%85%2004%20%D8%A3%D8%A8%D8%B1%D9%8A%D9%84%202026.%20%D8%A7%D8%B3%D9%85%D9%8A%20%D9%87%D9%88%3A%20"
        target="_blank" rel="noopener">
       ✅ تأكيد الحضور
     </a>
   </div>
 
-  <footer>دعوة رقمية · رِحاب و أنيس</footer>
+  <footer>دعوة رقمية · رحاب &amp; أنيس</footer>
 </main>
 
 <script>
-/* فتح الظرف + تمرير (scroll) + إزالة الغطاء */
 (function(){
   const envelope = document.getElementById("envelope");
   const intro = document.getElementById("intro");
@@ -672,7 +711,6 @@ body.opened .intro{
   });
 })();
 
-/* العدّ التنازلي */
 (function(){
   const target=new Date("2026-04-04T16:00:00");
   const els={
